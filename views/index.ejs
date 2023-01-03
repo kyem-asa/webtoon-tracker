@@ -12,10 +12,24 @@
     <h2>add a webtoon</h2>
 
     <form action="/addWebtoon" method="POST">
-        <input type="text" name="name" placeholder="webtoon name" id="">
+        <input type="text" name="webtoonTitle" placeholder="webtoon name" id="">
         <input type="text" name="currentChapter" placeholder="current chapter" id="">
         <input type="text" name="totalChapters" placeholder="total chapters" id="">
         <input type="text" name="source" placeholder="source" id="">
+        <input type="submit" value="Submit">
     </form>
+
+    <h2>Currently Reading</h2>
+    <ul class="webtoons">
+        <% for(let i=0; i < info.length; i++) {%>
+            <li class="webtoon">
+                <span><%= info[i].webtoonTitle %></span>
+                <span><%= info[i].currentChapter %></span>
+                <span><%= info[i].totalChapters %></span>
+                <span><%= info[i].source %></span>
+              
+            </li>
+        <% } %>
+        </ul>
 </body>
 </html>
