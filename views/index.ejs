@@ -14,7 +14,6 @@
     <form action="/addWebtoon" method="POST">
         <input type="text" name="webtoonTitle" placeholder="webtoon name" id="">
         <input type="text" name="currentChapter" placeholder="current chapter" id="">
-        <input type="text" name="totalChapters" placeholder="total chapters" id="">
         <input type="text" name="source" placeholder="source" id="">
         <input type="submit" value="Submit">
     </form>
@@ -25,11 +24,13 @@
             <li class="webtoon">
                 <span><%= info[i].webtoonTitle %></span>
                 <span><%= info[i].currentChapter %></span>
-                <span><%= info[i].totalChapters %></span>
                 <span><%= info[i].source %></span>
-              
+                <button class="add">Add chapter</button>
+                <button class="delete">Delete</button>
             </li>
         <% } %>
         </ul>
+
+        <script src="js/index.js"></script>
 </body>
 </html>
