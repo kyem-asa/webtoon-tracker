@@ -1,15 +1,18 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" data-theme="cupcake">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>webtoon tracker</title>
+
+    <link href="css/output.css" rel="stylesheet">
+
 </head>
 <body>
-    <h1>track your webtoons</h1>
+    <h1 class="text-3xl font-bold text-teal-500">track your webtoons</h1>
 
-    <h2>add a webtoon</h2>
+    <h2 class="text-2xl">add a webtoon</h2>
 
     <form action="/addWebtoon" method="POST">
         <input type="text" name="webtoonTitle" placeholder="webtoon name" id="">
@@ -25,7 +28,7 @@
                 <span><%= info[i].webtoonTitle %></span>
                 <span><%= info[i].currentChapter %></span>
                 <span><%= info[i].source %></span>
-                <button class="add">Add chapter</button>
+                <button class="btn">Add chapter</button>
                 <button class="delete">Delete</button>
             </li>
         <% } %>
