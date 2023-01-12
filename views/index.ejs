@@ -9,30 +9,31 @@
     <link href="css/output.css" rel="stylesheet">
 
 </head>
-<body>
-    <h1 class="text-3xl font-bold text-teal-500">track your webtoons</h1>
-
-    <h2 class="text-2xl">add a webtoon</h2>
-
-    <form action="/addWebtoon" method="POST">
-        <input type="text" name="webtoonTitle" placeholder="webtoon name" id="">
-        <input type="text" name="currentChapter" placeholder="current chapter" id="">
-        <input type="text" name="source" placeholder="source" id="">
-        <input type="submit" value="Submit">
-    </form>
-
-    <h2>Currently Reading</h2>
-    <ul class="webtoons">
-        <% for(let i=0; i < info.length; i++) {%>
-            <li class="webtoon">
-                <span><%= info[i].webtoonTitle %></span>
-                <span><%= info[i].currentChapter %></span>
-                <span><%= info[i].source %></span>
-                <button class="btn">Add chapter</button>
-                <button type="button" class="delete inline-block px-6 py-2.5 bg-blue-600 text-white font-medium text-xs leading-tight uppercase rounded shadow-md hover:bg-blue-700 hover:shadow-lg focus:bg-blue-700 focus:shadow-lg focus:outline-none focus:ring-0 active:bg-blue-800 active:shadow-lg transition duration-150 ease-in-out">Delete</button>
-            </li>
-        <% } %>
-        </ul>
+<body class="m-8 flex items-center justify-center h-screen">
+    <div class="flex flex-col" >
+        <h1 class="text-3xl font-bold my-8">(っ◔◡◔)っ ♥ Track Your Webtoons ♥</h1>
+        <h2 class="text-2xl">Add a webtoon</h2>
+        <div class="flex flex-col">
+            <form action="/addWebtoon" method="POST" class="">
+                <input type="text" name="webtoonTitle" placeholder="Webtoon name" id="" class="input input-xs input-bordered input-primary w-full max-w-xs my-4">
+                <input type="text" name="currentChapter" placeholder="Current chapter" id="" class="input input-xs input-bordered input-primary w-full max-w-xs my-4">
+                <input type="text" name="source" placeholder="Source" id="" class="input input-xs input-bordered input-primary w-full max-w-xs my-4">
+                <div><input type="submit" value="Add webtoon" class="btn btn-xs"></div>
+            </form>
+        </div>
+        <h2 class="text-2xl my-4">Currently Reading</h2>
+        <ul class="webtoons">
+            <% for(let i=0; i < info.length; i++) {%>
+                <li class="webtoon my-4">
+                    <span class="span mr-4"><%= info[i].webtoonTitle %></span>
+                    <span class="span mr-4"><%= info[i].currentChapter %></span>
+                    <span class="span mr-4"><%= info[i].source %></span>
+                    <button class="btn btn-xs">Add chapter</button>
+                    <button type="button" class="delete btn btn-xs">Delete</button>
+                </li>
+            <% } %>
+            </ul>
+    </div>
 
         <script src="js/index.js"></script>
 </body>
