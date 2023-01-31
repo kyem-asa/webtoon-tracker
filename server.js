@@ -64,7 +64,6 @@ app.put('/increaseChapterCount', (request, response) => {
         response.json('Chapter Added')
     })
     .catch(error => console.error(error))
-
 })
 
 app.delete('/deleteWebtoon', (request, response) => {
