@@ -3,6 +3,7 @@ const app = express()
 const MongoClient = require('mongodb').MongoClient
 const PORT = 9000
 require('dotenv').config()
+const homeRoute = require('./routes/home')
 
 
 
@@ -26,6 +27,7 @@ app.use(express.urlencoded({ extended: true }))
 app.use(express.json()) 
 
 
+app.use('/', homeRoute)
 
 app.get('/',(request, response)=>{ 
     db.collection('webtoons').find().toArray() 
