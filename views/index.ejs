@@ -22,7 +22,7 @@
             </form>
         </div>
         <h2 class="text-2xl my-4">Currently Reading</h2>
-        <ul class="webtoons">
+        <!-- <ul class="webtoons">
             <% for(let i=0; i < info.length; i++) {%>
                 <li class="webtoon my-4">
                     <span class="span mr-4"><%= info[i].webtoonTitle %></span>
@@ -32,7 +32,39 @@
                     <button type="button" class="delete btn btn-xs">Delete</button>
                 </li>
             <% } %>
-            </ul>
+            </ul> -->
+
+            
+
+        <table class="table-fixed  w-full">
+            <tr>
+                <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Title</th>
+                <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Last Read Chapter</th>
+                <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Source</th>
+                <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Actions</th>
+            </tr>
+            <% for(let i=0; i < info.length; i++) {%>
+            <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
+                <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                    <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Title</span>
+                    <%= info[i].webtoonTitle %>
+                               </td>
+                 <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                     <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Last Read Chapter</span>
+                    <%= info[i].currentChapter %>
+                             </td>
+                <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                    <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Source</span>
+                    <%= info[i].source %>
+                             </td>
+                             
+                 <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
+                   <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Action</span>
+                   <button class="delete bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Delete</button>  <button type="button" class="delete  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add chapter</button>
+                       </td>
+            </tr>
+            <% } %>
+        </table>
     </div>
 
         <script src="js/index.js"></script>
