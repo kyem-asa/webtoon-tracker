@@ -1,73 +1,48 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>webtoon tracker</title>
 
-    <link href="css/output.css" rel="stylesheet">
-
-</head>
-<body class="p-12">
+    <link href="css/output.css" rel="stylesheet" />
+  </head>
+  <body class="p-12">
     <div class="">
-        <h1 class="text-7xl font-bold my-8">(っ◔◡◔)っ ♥ Track Your Webtoons ♥</h1>
-        <h2 class="text-4xl">Add a webtoon</h2>
-        <div class="flex w-full">
-            <form action="/addWebtoon" method="POST" class="">
-                <input type="text" name="webtoonTitle" placeholder="Webtoon name" id="" class="input  form-control
-                mt-4
-                block
-                w-80
-                px-4
-                py-2
-                text-xl
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
-                <input type="text" name="currentChapter" placeholder="Current chapter" id="" class="input  form-control
-                mt-4
-                block
-                w-80
-                px-4
-                py-2
-                text-xl
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
-                <input type="text" name="source" placeholder="Source" id="" class="input  form-control
-                mt-4
-                  block
-                w-80
-                px-4
-                py-2
-                text-xl
-                font-normal
-                text-gray-700
-                bg-white bg-clip-padding
-                border border-solid border-gray-300
-                rounded
-                transition
-                ease-in-out
-                m-0
-                focus:text-gray-700 focus:bg-white focus:border-blue-600 focus:outline-none">
-                <div><input type="submit" value="Add webtoon" class=  " mt-4 bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded""></div>
-            </form>
-        </div>
-        <h2 class="text-2xl my-4">Currently Reading</h2>
-        <!-- <ul class="webtoons">
+      <h1 class="my-8 text-7xl font-bold">(っ◔◡◔)っ ♥ Track Your Webtoons ♥</h1>
+      <h2 class="text-4xl">Add a webtoon</h2>
+      <div class="flex w-full">
+        <form action="/addWebtoon" method="POST" class="">
+          <input
+            type="text"
+            name="webtoonTitle"
+            placeholder="Webtoon name"
+            id=""
+            class="input form-control m-0 mt-4 block w-80 rounded border border-solid border-gray-300 bg-white bg-clip-padding px-4 py-2 text-xl font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+          />
+          <input
+            type="text"
+            name="currentChapter"
+            placeholder="Current chapter"
+            id=""
+            class="input form-control m-0 mt-4 block w-80 rounded border border-solid border-gray-300 bg-white bg-clip-padding px-4 py-2 text-xl font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+          />
+          <input
+            type="text"
+            name="source"
+            placeholder="Source"
+            id=""
+            class="input form-control m-0 mt-4 block w-80 rounded border border-solid border-gray-300 bg-white bg-clip-padding px-4 py-2 text-xl font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
+          />
+          <div>
+            <input type="submit" value="Add webtoon" class= " mt-4 bg-blue-500
+            hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"">
+          </div>
+        </form>
+      </div>
+      <h2 class="my-4 text-2xl">Currently Reading</h2>
+      <!-- <ul class="webtoons">
             <% for(let i=0; i < info.length; i++) {%>
                 <li class="webtoon my-4">
                     <span class="span mr-4"><%= info[i].webtoonTitle %></span>
@@ -79,9 +54,7 @@
             <% } %>
             </ul> -->
 
-            
-        
-        <!-- <table>
+      <!-- <table>
             <tr>
                 <th>Title</th>
                 <th>Last Read Chapter</th>
@@ -95,37 +68,85 @@
                 <td><input type="submit" value="Add webtoon" class= "bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded""></td>
             </tr>
         </table>     -->
-        <table class="table-fixed  w-full">
-            <tr>
-                <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Title</th>
-                <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Last Read Chapter</th>
-                <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Source</th>
-                <th class="p-3 font-bold uppercase bg-gray-200 text-gray-600 border border-gray-300 hidden lg:table-cell">Actions</th>
-            </tr>
-            <% for(let i=0; i < info.length; i++) {%>
-            <tr class="bg-white lg:hover:bg-gray-100 flex lg:table-row flex-row lg:flex-row flex-wrap lg:flex-no-wrap mb-10 lg:mb-0">
-                <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                    <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Title</span>
-                    <%= info[i].webtoonTitle %>
-                               </td>
-                 <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                     <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Last Read Chapter</span>
-                    <%= info[i].currentChapter %>
-                             </td>
-                <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                    <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Source</span>
-                    <%= info[i].source %>
-                             </td>
-                             
-                 <td class="w-full lg:w-auto p-3 text-gray-800 text-center border border-b block lg:table-cell relative lg:static">
-                   <span class="lg:hidden absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase">Action</span>
-                   <button class="delete bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Delete</button>  <button type="button" class="delete  bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded">Add chapter</button>
-                       </td>
-            </tr>
-            <% } %>
-        </table>
+      <table class="w-full table-fixed">
+        <tr>
+          <th
+            class="hidden border border-gray-300 bg-gray-200 p-3 font-bold uppercase text-gray-600 lg:table-cell"
+          >
+            Title
+          </th>
+          <th
+            class="hidden border border-gray-300 bg-gray-200 p-3 font-bold uppercase text-gray-600 lg:table-cell"
+          >
+            Last Read Chapter
+          </th>
+          <th
+            class="hidden border border-gray-300 bg-gray-200 p-3 font-bold uppercase text-gray-600 lg:table-cell"
+          >
+            Source
+          </th>
+          <th
+            class="hidden border border-gray-300 bg-gray-200 p-3 font-bold uppercase text-gray-600 lg:table-cell"
+          >
+            Actions
+          </th>
+        </tr>
+        <% for(let i=0; i < info.length; i++) {%>
+        <tr
+          class="lg:flex-no-wrap mb-10 flex flex-row flex-wrap bg-white lg:mb-0 lg:table-row lg:flex-row lg:hover:bg-gray-100"
+        >
+          <td
+            class="relative block w-full border border-b p-3 text-center text-gray-800 lg:static lg:table-cell lg:w-auto"
+          >
+            <span
+              class="absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase lg:hidden"
+              >Title</span
+            >
+            <%= info[i].webtoonTitle %>
+          </td>
+          <td
+            class="relative block w-full border border-b p-3 text-center text-gray-800 lg:static lg:table-cell lg:w-auto"
+          >
+            <span
+              class="absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase lg:hidden"
+              >Last Read Chapter</span
+            >
+            <%= info[i].currentChapter %>
+          </td>
+          <td
+            class="relative block w-full border border-b p-3 text-center text-gray-800 lg:static lg:table-cell lg:w-auto"
+          >
+            <span
+              class="absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase lg:hidden"
+              >Source</span
+            >
+            <%= info[i].source %>
+          </td>
+
+          <td
+            class="relative block w-full border border-b p-3 text-center text-gray-800 lg:static lg:table-cell lg:w-auto"
+          >
+            <span
+              class="absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase lg:hidden"
+              >Action</span
+            >
+            <button
+              class="delete rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
+            >
+              Delete
+            </button>
+            <button
+              type="button"
+              class="delete rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
+            >
+              Add chapter
+            </button>
+          </td>
+        </tr>
+        <% } %>
+      </table>
     </div>
 
-        <script src="js/index.js"></script>
-</body>
+    <script src="js/index.js"></script>
+  </body>
 </html>
