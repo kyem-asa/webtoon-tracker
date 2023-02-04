@@ -12,28 +12,6 @@ Array.from(addChapter).forEach((element)=>{
 function chapWorks() {
     console.log('button works')
 }
-async function deleteEntry(){
-    const title = this.parentNode.childNodes[1].innerText
-    const chapter = Number(this.parentNode.childNodes[3].innerText)
-    const source = this.parentNode.childNodes[5].innerText
-    try{
-        const response = await fetch('deleteWebtoon', {
-            method: 'delete',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-              'webtoonTitle': title,
-              'currentChapter': chapter,
-              'source': source
-            })
-          })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-
-    }catch(err){
-        console.log(err)
-    }
-}
 
 async function increaseChapterCount(){
     const title = this.parentNode.childNodes[1].innerText
