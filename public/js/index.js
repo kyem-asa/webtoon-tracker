@@ -13,27 +13,52 @@ function chapWorks() {
     console.log('button works')
 }
 
-async function increaseChapterCount(){
-    const title = this.parentNode.childNodes[1].innerText
-    const chapter = Number(this.parentNode.childNodes[3].innerText)
-    const source = this.parentNode.childNodes[5].innerText
-    try{
-        const response = await fetch('increaseChapterCount', {
-            method: 'put',
-            headers: {'Content-Type': 'application/json'},
-            body: JSON.stringify({
-              'webtoonTitle': title,
-              'currentChapter': chapter,
-              'source': source
-            })
-          })
-        const data = await response.json()
-        console.log(data)
-        location.reload()
-        console.log('works')
-    
 
-    }catch(err){
-        console.log(err)
-    }
+async function deleteEntry(){
+const title = document.querySelector('.title').innerText
+const chapter = Number(document.querySelector('.lastChapter')).innerText
+const source = document.querySelector('.source').innerText
+  try{
+      const response = await fetch('deleteWebtoon', {
+          method: 'delete',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            'webtoonTitle': title,
+            'currentChapter': chapter,
+            'source': source
+          })
+        })
+      const data = await response.json()
+      console.log(data)
+      location.reload()
+
+  }catch(err){
+      console.log(err)
+  }
+}
+
+
+async function increaseChapterCount(){
+  const title = document.querySelector('.title').innerText
+  const chapter = Number(document.querySelector('.lastChapter').innerText)
+  const source = document.querySelector('.source').innerText
+  try{
+      const response = await fetch('increaseChapterCount', {
+          method: 'put',
+          headers: {'Content-Type': 'application/json'},
+          body: JSON.stringify({
+            'webtoonTitle': title,
+            'currentChapter': chapter,
+            'source': source
+          })
+        })
+      const data = await response.json()
+      console.log(data)
+      location.reload()
+      console.log('works')
+  
+
+  }catch(err){
+      console.log(err)
+  }
 }

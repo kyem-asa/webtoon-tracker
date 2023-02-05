@@ -96,7 +96,8 @@
           class="lg:flex-no-wrap mb-10 flex flex-row flex-wrap bg-white lg:mb-0 lg:table-row lg:flex-row lg:hover:bg-gray-100"
         >
           <td
-            class="relative block w-full border border-b p-3 text-center text-gray-800 lg:static lg:table-cell lg:w-auto"
+          id = "title"
+            class="title relative block w-full border border-b p-3 text-center text-gray-800 lg:static lg:table-cell lg:w-auto"
           >
             <span data-column="title"
               class="absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase lg:hidden toonTitle"
@@ -104,8 +105,10 @@
             >
             <%= info[i].webtoonTitle %>
           </td>
+
           <td
-            class="relative block w-full border border-b p-3 text-center text-gray-800 lg:static lg:table-cell lg:w-auto"
+          id="lastChapter"
+            class="lastChapter relative block w-full border border-b p-3 text-center text-gray-800 lg:static lg:table-cell lg:w-auto"
           >
             <span data-column="lastReadChapter"
               class="absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase lg:hidden toonChapter"
@@ -114,7 +117,8 @@
             <%= info[i].currentChapter %>
           </td>
           <td
-            class="relative block w-full border border-b p-3 text-center text-gray-800 lg:static lg:table-cell lg:w-auto"
+          id="source"
+            class="source relative block w-full border border-b p-3 text-center text-gray-800 lg:static lg:table-cell lg:w-auto"
           >
             <span data-column="source"
               class="absolute top-0 left-0 bg-blue-200 px-2 py-1 text-xs font-bold uppercase lg:hidden toonSource"
@@ -137,7 +141,7 @@
             </button>
             <button
               type="button"
-              class="delete rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
+              class="add rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
             >
               Add chapter
             </button>
