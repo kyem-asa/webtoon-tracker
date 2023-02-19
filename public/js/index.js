@@ -9,9 +9,6 @@ Array.from(addChapter).forEach((element)=>{
     element.addEventListener('click', increaseChapterCount)
 })
 
-function chapWorks() {
-    console.log('button works')
-}
 async function deleteEntry(){
     const title = this.parentNode.childNodes[1].innerText
     const chapter = Number(this.parentNode.childNodes[3].innerText)
