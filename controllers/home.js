@@ -1,5 +1,10 @@
 module.exports = {
-    getIndex: (req, res) => {
-        res.render('index.ejs')
+  getIndex: async (request, response) => {
+    try {
+      response.render('home.ejs')
+    } catch (error) {
+      console.error(error);
     }
+  },
+  
 }
