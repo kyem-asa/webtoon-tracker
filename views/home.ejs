@@ -14,7 +14,7 @@
     <h1 class="my-8 text-7xl font-bold">(っ◔◡◔)っ ♥ Track Your Webtoons ♥</h1>
     <h2 class="text-4xl">Add a webtoon</h2>
     <div class="flex w-full">
-      <form action="/addWebtoon" method="POST" class="">
+      <form action="webtoons/addWebtoon" method="POST" class="">
         <input
           type="text"
           name="title"
@@ -67,6 +67,8 @@
           Actions
         </th>
       </tr>
+
+      <!--Table-->
       <% for(let i=0; i < webtoon.length; i++) {%>
       <tr
         class="lg:flex-no-wrap mb-10 flex flex-row flex-wrap bg-white lg:mb-0 lg:table-row lg:flex-row lg:hover:bg-gray-100"
@@ -109,13 +111,13 @@
             >Action</span
           >
           <button
-            class="delete rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
+            class="delete rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700" data-id="<%= webtoon[i]._id %>"
           >
             Delete
           </button>
           <button
             type="button"
-            class="add rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700"
+            class="add rounded bg-blue-500 py-2 px-4 font-bold text-white hover:bg-blue-700" data-id="<%= webtoon[i]._id %>"
           >
             Add chapter
           </button>

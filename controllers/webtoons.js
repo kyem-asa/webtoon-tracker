@@ -1,11 +1,11 @@
-const Webtoon = require("../models/Webtoons");
+const Webtoon = require('../models/Webtoons');
 
 module.exports = {
   getWebtoons: async (request, response) => {
     try {
       const webtoonItem = await Webtoon.find();
       console.log(webtoonItem);
-      response.render("home.ejs", { webtoon: webtoonItem });
+      response.render('home.ejs', { webtoon: webtoonItem });
     } catch (error) {
       console.error(error);
     }
@@ -19,15 +19,29 @@ module.exports = {
         lastReadChapter: request.body.lastReadChapter,
         source: request.body.source,
         dateAdded: new Date().toLocaleDateString(`en`, {
-          year: "numeric",
-          month: "long",
-          day: "numeric",
+          year: 'numeric',
+          month: 'long',
+          day: 'numeric',
         }),
       });
-      console.log("Webtoon added");
-      response.redirect("/webtoons");
+      console.log('Webtoon added');
+      response.redirect('/webtoons');
     } catch (err) {
       console.log(err);
+    }
+  },
+
+  deleteWebtoon: async (request, response) => {
+    try {
+      const id = request.params.id;
+      const result = await Webtoon.findByIdAndDelete(id);
+      if (!result) {
+        return response.status(404).send('Document not found');
+      }
+      response.send('Document deleted successfully');
+    } catch (error) {
+      console.error(error);
+      res.status(500).send('Internal Server Error');
     }
   },
 };

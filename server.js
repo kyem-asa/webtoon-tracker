@@ -25,6 +25,10 @@ router.get("/", landingController.getIndex);
 router.get("/home", homeController.getIndex);
 router.get("/webtoons", webtoonsController.getWebtoons);
 router.post("/webtoons/addWebtoon", webtoonsController.addWebtoon);
+router.delete(`/webtoon/delete/:id`, webtoonsController.deleteWebtoon)
+
+
+
 // router.put("/increaseChapter", webtoonsController.increaseChapter)
 // router.delete("/deleteWebtoon", webtoonsController.deleteWebtoon)
 
