@@ -13,40 +13,12 @@
   <div class="">
     <h1 class="my-8 text-7xl font-bold">(っ◔◡◔)っ ♥ Track Your Webtoons ♥</h1>
     <h2 class="text-4xl">Add a webtoon</h2>
-    <div class="flex w-full">
-      <form action="webtoons/addWebtoon" method="POST" class="">
-        <input
-          type="text"
-          name="title"
-          placeholder="Webtoon name"
-          id=""
-          class="input form-control m-0 mt-4 block w-80 rounded border border-solid border-gray-300 bg-white bg-clip-padding px-4 py-2 text-xl font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
-        />
-        <input
-          type="text"
-          name="lastReadChapter"
-          placeholder="Current chapter"
-          id=""
-          class="input form-control m-0 mt-4 block w-80 rounded border border-solid border-gray-300 bg-white bg-clip-padding px-4 py-2 text-xl font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
-        />
-        <input
-          type="text"
-          name="source"
-          placeholder="Source"
-          id=""
-          class="input form-control m-0 mt-4 block w-80 rounded border border-solid border-gray-300 bg-white bg-clip-padding px-4 py-2 text-xl font-normal text-gray-700 transition ease-in-out focus:border-blue-600 focus:bg-white focus:text-gray-700 focus:outline-none"
-        />
-        <div>
-          <input type="submit" value="Add webtoon" class="btn" mt-4 bg-blue-500
-          hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"">
-        </div>
-      </form>
-    </div>
+   
     <h2 class="my-4 text-2xl">Currently Reading</h2>
     
     
   <div class="overflow-x-auto">
-    <table class="table w-8">
+    <table class="table w-full">
       <!-- head -->
       <thead>
         <tr>
@@ -58,18 +30,27 @@
       </thead>
       <tbody>
         <!-- row 1 -->
+        <form action="/webtoons/addWebtoon" method="POST">
+          <tr>
+            <td></td>
+            <td><input type="text" name="title" placeholder="Webtoon title"class="input input-bordered input-sm w-full max-w-xs"></td>
+            <td><input type="text" name="lastReadChapter" placeholder="chapter"class="input input-bordered input-sm w-full max-w-xs"></td>
+            <td><input type="text" name="source" id="" class="input input-bordered input-sm w-full max-w-xs"></td>
+            <td><input type="submit" value="Add webtoon" class="btn"></td>
+          </tr>
+        </form>
         <% for(let i=0; i < webtoon.length; i++) {%>
         <tr>
           <th>1</th>
           <td> <%= webtoon[i].title %></td>
           <td>  <%= webtoon[i].source %></td>
-          <td><button class="btn btn-xs" data-id="<%= webtoon[i]._id %>"> Delete</button></td>
+          <td><button class="btn btn-sm" data-id="<%= webtoon[i]._id %>"> Delete</button></td>
         </tr>
         <!-- row 2 -->
         </tbody>
       <% } %>
     </table>
-  </div>
+
   
     <script src="js/index.js"></script>
 </body>
