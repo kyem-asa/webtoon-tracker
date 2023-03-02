@@ -6,10 +6,10 @@ const WebtoonSchema = new mongoose.Schema({
     required: true,
   },
 
-  lastReadChapter: {
-    type: Number,
-    required: true,
-  },
+  // lastReadChapter: {
+  //   type: Number,
+  //   required: true,
+  // },
 
   source: {
     type: String,
