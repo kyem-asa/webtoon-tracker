@@ -9,47 +9,50 @@
     <link href="/css/output.css" rel="stylesheet">
 
 </head>
-<body class="p-12">
-  <div class="">
+<body class="p-12 ">
+  <div class="grid h-screen place-items-center">
     <h1 class="my-8 text-7xl font-bold">(っ◔◡◔)っ ♥ Track Your Webtoons ♥</h1>
     <h2 class="text-4xl">Add a webtoon</h2>
    
     <h2 class="my-4 text-2xl">Currently Reading</h2>
     
-    
-  <div class="overflow-x-auto">
-    <table class="table w-full">
-      <!-- head -->
-      <thead>
-        <tr>
-          <th></th>
-          <th>Title</th>
-          <th>Source</th>
-          <th>Actions</th>
-        </tr>
-      </thead>
-      <tbody>
-        <!-- row 1 -->
-        <form action="/webtoons/addWebtoon" method="POST">
+  <!--TABLE -->  
+  <div class="flex items-center">
+    <div class="overflow-x-auto">
+      <table class="table w-full">
+        <!-- head -->
+        <thead>
           <tr>
-            <td></td>
-            <td><input type="text" name="title" placeholder="Webtoon title"class="input input-bordered input-sm w-full max-w-xs"></td>
-            <!-- <td><input type="text" name="lastReadChapter" placeholder="chapter"class="input input-bordered input-sm w-full max-w-xs"></td> -->
-            <td><input type="text" name="source" id="" class="input input-bordered input-sm w-full max-w-xs"></td>
-            <td><input type="submit" value="Add webtoon" class="btn"></td>
+            <th></th>
+            <th>Title</th>
+            <th>Source</th>
+            <th>Actions</th>
           </tr>
-        </form>
-        <% for(let i=0; i < webtoon.length; i++) {%>
-        <tr>
-          <th>1</th>
-          <td> <%= webtoon[i].title %></td>
-          <td>  <%= webtoon[i].source %></td>
-          <td><button class="btn btn-sm" data-id="<%= webtoon[i]._id %>"> Delete</button></td>
-        </tr>
-        <!-- row 2 -->
-        </tbody>
-      <% } %>
-    </table>
+        </thead>
+        <tbody>
+          <!-- row 1 -->
+          <form action="/webtoons/addWebtoon" method="POST">
+            <tr>
+              <td></td>
+              <td><input type="text" name="title" placeholder="Webtoon title"class="input input-bordered input-sm w-full max-w-xs"></td>
+              <!-- <td><input type="text" name="lastReadChapter" placeholder="chapter"class="input input-bordered input-sm w-full max-w-xs"></td> -->
+              <td><input type="text" name="source" id="" class="input input-bordered input-sm w-full max-w-xs"></td>
+              <td><input type="submit" value="Add webtoon" class="btn w-36"></td>
+            </tr>
+          </form>
+          <% for(let i=0; i < webtoon.length; i++) {%>
+          <tr>
+            <th>1</th>
+            <td> <%= webtoon[i].title %></td>
+            <td>  <%= webtoon[i].source %></td>
+            <td><button class="delete btn w-36" data-id="<%= webtoon[i]._id %>"> Delete</button></td>
+          </tr>
+          <!-- row 2 -->
+          </tbody>
+        <% } %>
+      </table>
+      </div>
+  </div>
 
   
     <script src="js/index.js"></script>

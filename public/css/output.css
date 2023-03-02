@@ -2249,12 +2249,24 @@ html {
   display: table;
 }
 
+.grid {
+  display: grid;
+}
+
 .hidden {
   display: none;
 }
 
 .h-8 {
   height: 2rem;
+}
+
+.h-screen {
+  height: 100vh;
+}
+
+.min-h-screen {
+  min-height: 100vh;
 }
 
 .w-full {
@@ -2279,6 +2291,22 @@ html {
 
 .w-6 {
   width: 1.5rem;
+}
+
+.w-12 {
+  width: 3rem;
+}
+
+.w-40 {
+  width: 10rem;
+}
+
+.w-36 {
+  width: 9rem;
+}
+
+.w-1\/2 {
+  width: 50%;
 }
 
 .min-w-0 {
@@ -2313,8 +2341,16 @@ html {
   flex-wrap: wrap;
 }
 
+.place-items-center {
+  place-items: center;
+}
+
 .items-center {
   align-items: center;
+}
+
+.justify-center {
+  justify-content: center;
 }
 
 .space-x-4 > :not([hidden]) ~ :not([hidden]) {
