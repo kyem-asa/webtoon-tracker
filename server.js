@@ -3,11 +3,17 @@ const connectDB = require("./config/database");
 const app = express();
 const MongoClient = require("mongodb").MongoClient;
 const router = express.Router();
+const passport = require('passport')
+const session = require('express-session')
+const MongoStore = require('connect-mongo')(session)
+const logger = require('morgan')
 require("dotenv").config({ path: "./config/.env" });
 const landingController = require("./controllers/landing");
 const webtoonsController = require("./controllers/webtoons");
 const homeController = require("./controllers/home");
 const bodyParser = require('body-parser');
+const themeChange = require('theme-change')
+const { default: mongoose} = require('mongoose')
 
 
 require('dotenv').config({path: './config/.env'})
