@@ -1,11 +1,13 @@
+const { response } = require('express')
 const Webtoon = require('../models/Webtoons');
 
 module.exports = {
   getWebtoons: async (request, response) => {
+    console.log(request.user)
     try {
       const webtoonItem = await Webtoon.find();
       console.log(webtoonItem);
-      response.render('home.ejs', { webtoon: webtoonItem });
+      response.render('webtoons.ejs', { webtoon: webtoonItem });
     } catch (error) {
       console.error(error);
     }
@@ -44,4 +46,8 @@ module.exports = {
       res.status(500).send('Internal Server Error');
     }
   },
+
+  // getGuest: (request, response) => {
+  //   response.render('webtoons.ejs')
+  // }
 };
