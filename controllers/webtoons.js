@@ -1,11 +1,10 @@
-const { response } = require('express')
 const Webtoon = require('../models/Webtoons');
 
 module.exports = {
   getWebtoons: async (request, response) => {
     console.log(request.user)
     try {
-      const webtoonItem = await Webtoon.find();
+      const webtoonItem = await Webtoon.find( {userId: request.user.id} );
       console.log(webtoonItem);
       response.render('webtoons.ejs', { webtoon: webtoonItem });
     } catch (error) {
@@ -25,6 +24,7 @@ module.exports = {
           month: 'long',
           day: 'numeric',
         }),
+        userId: request.user.id,
       });
       console.log('Webtoon added');
       response.redirect('/webtoons');

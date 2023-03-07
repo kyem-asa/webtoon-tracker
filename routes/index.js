@@ -3,6 +3,7 @@ const router = express.Router();
 const authController = require('../controllers/auth');
 const indexController = require('../controllers/index');
 const webtoonsController = require('../controllers/webtoons')
+const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 router.get('/', indexController.getIndex);
 router.get('/webtoons', webtoonsController.getWebtoons)
