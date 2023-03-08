@@ -3,14 +3,15 @@ const router = express.Router();
 const authController = require('../controllers/auth');
 const indexController = require('../controllers/index');
 const webtoonsController = require('../controllers/webtoons')
+const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
-router.get('/', indexController.getIndex);
-router.get('/webtoons', webtoonsController.getWebtoons)
-router.get('/login', authController.getLogin);
-router.post('/login', authController.postLogin);
-router.get('/logout', authController.logout);
-router.get('/signup', authController.getSignup);
-router.post('/signup', authController.postSignup);
+// set router on routes and direct to controller
+router.get('/', indexController.getIndex)
+router.get('/login', authController.getLogin)
+router.post('/login', authController.postLogin)
+router.get('/logout', authController.logout)
+router.get('/signup', authController.getSignup)
+router.post('/signup', authController.postSignup)
 
-module.exports = router;
-
+// export file for use in server.js
+module.exports = router

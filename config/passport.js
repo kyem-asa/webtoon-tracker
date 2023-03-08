@@ -2,8 +2,11 @@ const LocalStrategy = require('passport-local').Strategy
 const mongoose = require('mongoose')
 const User = require('../models/User')
 
+
 module.exports = function (passport) {
+  //defines the passport strategy
   passport.use(new LocalStrategy({ usernameField: 'email' }, (email, password, done) => {
+    // searches db for user and password and returns message if not found
     User.findOne({ email: email.toLowerCase() }, (err, user) => {
       if (err) { return done(err) }
       if (!user) {

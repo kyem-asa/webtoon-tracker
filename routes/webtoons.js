@@ -1,14 +1,14 @@
-const express = require('express');
-const router = express.Router();
-const webtoonsController = require('../controllers/webtoons')
+// import express, router, controller and ensureAuth middleware
+const express = require('express')
+const router = express.Router()
+const webtoonsController = require('../controllers/webtoons') 
+const { ensureAuth } = require('../middleware/auth') // destructuring, grab variable go to middleware and find auth file
 
-router.get('/webtoons', webtoonsController.getWebtoons)
+// put ensure auth on route and check ensureauth middleware
+router.get('/', ensureAuth, webtoonsController.getWebtoons)
+
 router.post('/addWebtoon', webtoonsController.addWebtoon)
-router.post('/deleteWebtoon', webtoonsController.deleteWebtoon)
 
-// to add
-// router.post('/editWebtoon')
-// router.post('/addChapter')
+router.delete('/deleteTodo', webtoonsController.deleteWebtoon)
 
-module.exports = router;
-
+module.exports = router

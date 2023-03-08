@@ -1,9 +1,7 @@
-module.exports = {
-    getIndex: (req, res) => {
-        res.render('index.ejs')
-    },
+//render the homepage
 
-    getGuest: (req, res) => {
-      res.render('webtoons.ejs')
-    }
+module.exports = {
+  getIndex: (req,res)=>{
+      res.render('index.ejs')
+  }
 }
