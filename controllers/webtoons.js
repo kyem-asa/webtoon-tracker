@@ -12,6 +12,17 @@ module.exports = {
             console.log(err)
         }
     },
+    getWebtoonsGuest: async (req,res)=>{
+      //show who is logged in via user property that request has with passport
+       
+        try{
+          //find in db todo items from the request id by specific user
+            const webtoonItems = await Webtoon.find()
+            res.render('webtoons.ejs', {webtoon: webtoonItems})
+        }catch(err){
+            console.log(err)
+        }
+    },
     addWebtoon: async (req, res)=>{
         try{
           //create todo and add userid from req body

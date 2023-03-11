@@ -7,6 +7,7 @@ const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
 // set router on routes and direct to controller
 router.get('/', indexController.getIndex)
+router.get('/webtoons/guest', webtoonsController.getWebtoonsGuest)
 router.get('/login', authController.getLogin)
 router.post('/login', authController.postLogin)
 router.get('/logout', authController.logout)

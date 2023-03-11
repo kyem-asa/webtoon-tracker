@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="acid">
+<html lang="en" data-theme="cyberpunk">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,8 +13,7 @@
 <header>
   <nav class="ml-4 mt-4">
     <ul class="flex gap-4">
-      <li>About</li>
-      <li><a href="/logout">Logout</a></li>
+      <a href="/logout" class="text-3xl black uppercase text-decoration: underline">Logout</a>
     </ul>
   </nav>
 </header>
@@ -24,7 +23,7 @@
  
   <!--TABLE -->  
   <div class="">
-    <h1 class="text-6xl uppercase bold mb-8">♥ Track Your Webtoons ♥</h1>
+    <h1 class="text-3xl uppercase bold mb-8">♥ You're currently reading <%= webtoon.length%> webtoons.</h1>
     <div class="overflow-x-auto">
       <table class="table table-zebra w-full">
         <!-- head -->
