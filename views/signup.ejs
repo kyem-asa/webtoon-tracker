@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="acid">
+<html lang="en" data-theme="cyberpunk">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -14,46 +14,47 @@
         <% }) %>    
     <% } %>
     <a href="/" class="text-3xl black uppercase text-decoration: underline">Home</a>
-    <div class="hero min-h-screen">
+    <div class="flex justify-center pt-28">
   
           <div class="card flex-shrink-0 w-full max-w-sm">
        <div class="card-body">
-         <h2 class="text-3xl black uppercase py-8">Create account</h2>
-         <div class="form-control">
-           <label class="label">
-             <span class="label-text">Username</span>
-           </label>
-           <input type="text" placeholder="email" class="input input-bordered" />
-         </div>
-         
-         <div class="form-control">
-           <label class="label">
-             <span class="label-text">Email</span>
-           </label>
-           <input type="text" placeholder="password" class="input input-bordered" />
-     
-         </div>
-         <div class="form-control">
-          <label class="label">
-            <span class="label-text">Password</span>
-          </label>
-          <input type="text" placeholder="password" class="input input-bordered" />
-         
-        </div>
-        <div class="form-control">
-          <label class="label">
-            <span class="label-text">Enter password again</span>
-          </label>
-          <input type="text" placeholder="password" class="input input-bordered" />
-       
-        </div>
-         <div class="form-control mt-6">
-           <button class="btn btn-primary">Create account</button>
-         </div>
+         <form action="/signup" method="POST">
+           <h2 class="text-3xl black uppercase py-8">Create account</h2>
+           <div class="form-control">
+             <label class="label">
+               <span class="label-text">Username</span>
+             </label>
+             <input type="text" placeholder="Username" class="input input-bordered" name="userName"/>
+           </div>
+           
+           <div class="form-control">
+             <label class="label">
+               <span class="label-text">Email</span>
+             </label>
+             <input type="email" placeholder="Email" class="input input-bordered" name="email" />
+           </div>
+           <div class="form-control">
+            <label class="label">
+              <span class="label-text">Password</span>
+            </label>
+            <input type="password" placeholder="Password" class="input input-bordered" name="password"/>
+           
+                   </div>
+                   <div class="form-control">
+            <label class="label">
+              <span class="label-text">Enter password again</span>
+            </label>
+            <input type="password" placeholder="Password again" class="input input-bordered" name="confirmPassword" />
+                  
+                   </div>
+           <div class="form-control mt-6">
+             <button class="btn btn-primary">Create account</button>
+           </div>
+         </form>
        </div>
      </div>
    </div>
  </div>
- <a href="/signup" class="uppercase text-decoration: underline block py-4">Create an account instead <i class="fa-solid fa-arrow-right-long"></i></a>
+ <a href="/login" class="uppercase text-decoration: underline block py-4">Login instead <i class="fa-solid fa-arrow-right-long"></i></a>
 </body>
 </html>
