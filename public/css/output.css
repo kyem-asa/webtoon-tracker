@@ -2605,3 +2605,8 @@ html {
   --tw-bg-opacity: 1 !important;
   background-color: rgb(231 229 228 / var(--tw-bg-opacity)) !important;
 }
+
+.hover\:text-red-500:hover {
+  --tw-text-opacity: 1;
+  color: rgb(239 68 68 / var(--tw-text-opacity));
+}
