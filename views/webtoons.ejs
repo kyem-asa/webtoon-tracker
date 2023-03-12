@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="bumblebee">
+<html lang="en" data-theme="lofi">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
 <header>
   <nav class="ml-4 mt-4">
     <ul class="flex gap-4">
-      <a href="/logout" class="text-3xl black uppercase text-decoration: underline">Logout</a>
+      <a href="/logout" class="link hover:text-red-500 active:text-blue-500 text-3xl black uppercase text-decoration: underline">Logout</a>
     </ul>
   </nav>
 </header>
@@ -42,15 +42,15 @@
               <td><input type="text" name="title" placeholder="Webtoon title"class="input input-bordered input-m w-full max-w-xs"></td>
               <!-- <td><input type="text" name="lastReadChapter" placeholder="chapter"class="input input-bordered input-sm w-full max-w-xs"></td> -->
               <td><input type="text" name="source" id="" class="input input-bordered input-m w-full max-w-xs"></td>
-              <td><input type="submit" value="Add webtoon" class="btn w-36 btn-m"></td>
+              <td><input type="submit" value="Add webtoon" class="btn w-36 btn-m  hover:bg-red-500 hover:border-none active:bg-blue-500"></td>
             </tr>
           </form>
           <% for(let i=0; i < webtoon.length; i++) {%>
           <tr class="odd:bg-zinc-500 hover:!bg-stone-200">
-            <th>1</th>
+            <th></th>
             <td> <%= webtoon[i].title %></td>
             <td>  <%= webtoon[i].source %></td>
-            <td><button class="delete btn w-36 btn-m btn-primary" data-id="<%= webtoon[i]._id %>"> Delete</button></td>
+            <td><button class="delete btn w-36 btn-m btn-primary  hover:bg-red-500 hover:border-none active:bg-blue-500" data-id="<%= webtoon[i]._id %>"> Delete</button></td>
           </tr>
           <!-- row 2 -->
           </tbody>

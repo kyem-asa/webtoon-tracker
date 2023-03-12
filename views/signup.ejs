@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" data-theme="retro">
+<html lang="en" data-theme="lofi">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -13,7 +13,7 @@
             <div class="alert alert-danger"><%= el.msg %></div>
         <% }) %>    
     <% } %>
-    <a href="/" class="text-3xl black uppercase text-decoration: underline">Home</a>
+    <a href="/" class="link hover:text-red-500 active:text-blue-500 text-3xl black uppercase text-decoration: underline">Home</a>
     <div class="flex justify-center pt-28">
   
           <div class="card flex-shrink-0 w-full max-w-sm">
@@ -48,13 +48,13 @@
                   
                    </div>
            <div class="form-control mt-6">
-             <button class="btn btn-primary">Create account</button>
+             <button class="btn btn-primary  hover:bg-red-500 hover:border-none active:bg-blue-500">Create account</button>
            </div>
          </form>
        </div>
      </div>
    </div>
  </div>
- <a href="/login" class="uppercase text-decoration: underline block py-4">Login instead <i class="fa-solid fa-arrow-right-long"></i></a>
+ <a href="/login" class="link hover:text-red-500 active:text-blue-500 uppercase text-decoration: underline block py-4">Login instead</a>
 </body>
 </html>
