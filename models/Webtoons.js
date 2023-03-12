@@ -1,15 +1,10 @@
-const mongoose = require("mongoose");
+const mongoose = require('mongoose');
 
 const WebtoonSchema = new mongoose.Schema({
   title: {
     type: String,
     required: true,
   },
-
-  // lastReadChapter: {
-  //   type: Number,
-  //   required: true,
-  // },
 
   source: {
     type: String,
@@ -23,10 +18,8 @@ const WebtoonSchema = new mongoose.Schema({
 
   userId: {
     type: String,
-    required: true
-  }
+    required: true,
+  },
 });
 
-
-module.exports = mongoose.model('Webtoon', WebtoonSchema)
-
+module.exports = mongoose.model('Webtoon', WebtoonSchema);
