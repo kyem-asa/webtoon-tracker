@@ -13,7 +13,7 @@ async function deleteEntry(){
   const id = this.getAttribute('data-id')
     
  try {
-      const response = await fetch(`/webtoon/delete/${id}`, { method: 'DELETE' });
+      const response = await fetch(`/webtoons/delete/${id}`, { method: 'DELETE' });
       if (response.ok) {
         // reload the page to show the updated list of documents
         window.location.reload();

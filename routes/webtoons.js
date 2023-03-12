@@ -9,6 +9,6 @@ router.get('/', ensureAuth, webtoonsController.getWebtoons)
 
 router.post('/addWebtoon', webtoonsController.addWebtoon)
 
-router.delete('/deleteTodo', webtoonsController.deleteWebtoon)
+router.delete('/delete/:id', ensureAuth, webtoonsController.deleteWebtoon)
 
 module.exports = router

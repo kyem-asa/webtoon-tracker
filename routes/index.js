@@ -5,14 +5,12 @@ const indexController = require('../controllers/index');
 const webtoonsController = require('../controllers/webtoons')
 const { ensureAuth, ensureGuest } = require('../middleware/auth')
 
-// set router on routes and direct to controller
 router.get('/', indexController.getIndex)
-router.get('/webtoons/guest', webtoonsController.getWebtoonsGuest)
 router.get('/login', authController.getLogin)
 router.post('/login', authController.postLogin)
 router.get('/logout', authController.logout)
 router.get('/signup', authController.getSignup)
 router.post('/signup', authController.postSignup)
 
-// export file for use in server.js
+
 module.exports = router

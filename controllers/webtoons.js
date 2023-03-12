@@ -1,4 +1,5 @@
 const Webtoon = require('../models/Webtoons')
+const Guest = require('../models/Guest')
 
 module.exports = {
     getWebtoons: async (req,res)=>{
@@ -14,11 +15,14 @@ module.exports = {
     },
     getWebtoonsGuest: async (req,res)=>{
       //show who is logged in via user property that request has with passport
+      console.log(req.body)
+
+       console.log(req.session)
        
         try{
           //find in db todo items from the request id by specific user
-            const webtoonItems = await Webtoon.find()
-            res.render('webtoons.ejs', {webtoon: webtoonItems})
+            const webtoonItems = await Webtoon.find({userName: 'test'})
+            res.render('webtoons.ejs', {webtoon: webtoonItems, userName: 'test'})
         }catch(err){
             console.log(err)
         }
@@ -45,7 +49,7 @@ module.exports = {
         }
     },
    
-  deleteWebtoon: async (request, response) => {
+  deleteWebtoon: async (req, res) => {
     try {
       const id = req.params.id;
       const result = await Webtoon.findByIdAndDelete(id);
@@ -57,5 +61,5 @@ module.exports = {
       console.error(error);
       res.status(500).send('Internal Server Error');
     }
-  },
+  }
 }    
