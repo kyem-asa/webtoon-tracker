@@ -2,7 +2,6 @@
   "name": "webtoon-tracker",
   "version": "1.0.0",
   "description": "",
-
   "scripts": {
     "start": "node server.js",
     "test": "echo \"Error: no test specified\" && exit 1",
@@ -23,7 +22,7 @@
     "express-flash": "^0.0.2",
     "express-session": "^1.17.3",
     "mongodb": "^4.13.0",
-    "mongoose": "^6.9.2",
+    "mongoose": "~6.9.1",
     "morgan": "^1.10.0",
     "passport": "^0.6.0",
     "passport-local": "^1.0.0",
